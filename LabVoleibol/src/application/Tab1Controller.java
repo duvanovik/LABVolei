@@ -15,9 +15,13 @@ public class Tab1Controller {
     private Button buttCambiar;
 
     @FXML
-    void cambiarPagina(ActionEvent event) throws IOException {
-    	Parent root = FXMLLoader.load(getClass().getResource("Tab2.fxml"));
-    	buttCambiar.getScene().setRoot(root);
+    void cambiarPagina(ActionEvent event){
+    	try {
+        	Parent root = FXMLLoader.load(getClass().getResource("Tab2.fxml"));
+        	buttCambiar.getScene().setRoot(root);
+    	}catch(Exception e) {
+    		e.printStackTrace();
+    	}
     }
 	
 }
